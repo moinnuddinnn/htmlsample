@@ -1,15 +1,18 @@
-{% extends 'main.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trending Artists</title>
+</head>
+<body>
+    <h1>Trending Artists</h1>
+    <ul>
+        <li><strong>Artist 1</strong> — Followers: 12,345</li>
+        <li><strong>Artist 2</strong> — Followers: 8,910</li>
+        <li><strong>Artist 3</strong> — Followers: 5,432</li>
+        <li><strong>Artist 4</strong> — Followers: 2,100</li>
+    </ul>
+</body>
+</html>
 
-{% block content %}
-<h1>Trending Artists</h1>
 
-<ul>
-    {% for artist in artists %}
-        <li>
-            <strong>{{ artist.name }}</strong> — Followers: {{ artist.followers }}
-        </li>
-    {% empty %}
-        <li>No artists found in database.</li>
-    {% endfor %}
-</ul>
-{% endblock %}
