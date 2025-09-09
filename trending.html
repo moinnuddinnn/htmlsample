@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block content %}
+<h1>Trending Artists</h1>
+
+<ul>
+    {% for artist in artists %}
+        <li>
+            <strong>{{ artist.name }}</strong> — Followers: {{ artist.followers }}
+        </li>
+    {% empty %}
+        <li>No artists found in database.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

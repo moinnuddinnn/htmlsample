@@ -1,0 +1,20 @@
+<h1>Music Recommendations</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <input type="text" name="artist_name" placeholder="Enter an artist name" required>
+    <button type="submit">Get Recommendations</button>
+</form>
+
+{% if query %}
+    <h2>Recommendations based on "{{ query }}"</h2>
+    {% if recommended_artists %}
+        <ul>
+        {% for artist in recommended_artists %}
+            <li>{{ artist.name }} — {{ artist.genres }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No recommendations found.</p>
+    {% endif %}
+{% endif %}
