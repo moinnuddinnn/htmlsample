@@ -1,2 +1,2 @@
 # htmlsample
-idk
+sample html and css files for future nessecities 
